@@ -1,0 +1,28 @@
+{
+    "alias": "sms77",
+    "icon": "fa fa-mobile",
+    "version": "1.0.0",
+    "active": 1,
+    "providers": [
+        "Modules\\Sms77\\Providers\\Event",
+        "Modules\\Sms77\\Providers\\Main"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": [],
+    "reports": [],
+    "widgets": [],
+    "settings": [
+        {
+            "attributes": {
+                "required": "required"
+            },
+            "icon": "fa fa-font",
+            "name": "api_key",
+            "rules": "required|string",
+            "title": "sms77::general.api_key",
+            "type": "textGroup"
+        }
+    ],
+    "extra-modules": {}
+}

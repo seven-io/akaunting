@@ -1,0 +1,22 @@
+{
+    "name": "sms77/akaunting",
+    "description": "sms77 app for Akaunting",
+    "homepage": "https://www.sms77.io",
+    "license": "MIT",
+    "require": {
+        "sms77/api": "v2.4.0"
+    },
+    "repositories": [],
+    "replace": {
+        "guzzlehttp/guzzle": "*",
+        "guzzlehttp/psr7": "*",
+        "laravel/framework": "*",
+        "omnipay/common": "*",
+        "symfony/http-foundation": "*"
+    },
+    "scripts": {
+        "test": [
+            "composer install --prefer-dist --no-interaction --no-scripts --no-suggest --no-progress --no-ansi"
+        ]
+    }
+}

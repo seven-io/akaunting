@@ -1,0 +1,4 @@
+mix-manifest.json
+vendor/
+node_modules/
+*.min.js
