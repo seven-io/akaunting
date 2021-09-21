@@ -9,7 +9,7 @@ return [
     'debug' => 'Debug',
     'debug_explained' => 'Act like a sandbox not sending messages - useful for testing the API connection',
     'delay' => 'Delay - pick a date/time for time delayed dispatch',
-    'description' => 'This is my awesome module',
+    'description' => 'Send SMS and make text-to-speech calls via sms77.io',
 
     'flash' => 'Flash',
     'flash_explained' => 'Most devices display those directly in the display and messages do not get saved',
@@ -26,6 +26,8 @@ return [
     'name' => 'Sms77',
     'no_reload' => 'No Reload',
     'no_reload_explained' => 'Allows sending duplicate messages if enabled - text and recipient alike within 180 seconds',
+
+    'on_invoice_creation_text' => 'SMS text to send on invoice creation - leave empty to disable',
 
     'performance_tracking' => 'Performance Tracking',
     'performance_tracking_explained' => 'Monitor click rate for links found in the message',

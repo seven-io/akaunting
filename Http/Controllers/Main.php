@@ -12,12 +12,15 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
+use Modules\Sms77\Traits\Message;
+use Modules\Sms77\Traits\Settings;
 use Plank\Mediable\MediableCollection;
-use Sms77\Api\Client;
 use Sms77\Api\Params\SmsParams;
 use Sms77\Api\Params\VoiceParams;
 
 class Main extends Controller {
+    use Message, Settings;
+
     /**
      * Submit bulk messaging.
      * @param Request $request
@@ -25,7 +28,8 @@ class Main extends Controller {
      * @throws Exception
      */
     public function submit(Request $request) {
-        $isSMS = 'sms' === $request->input('sms77_msg_type');
+        $type = $request->input('sms77_msg_type');
+        $isSMS = 'sms' === $type;
 
         $params = ($isSMS ? (new SmsParams)
             ->setDelay($request->input('sms77_delay'))
@@ -41,13 +45,7 @@ class Main extends Controller {
             ->setText($request->input('sms77_text'))
             ->setTo($this->getContactPhones());
 
-        dump($params);
-
-        $client = new Client($request->input('sms77_api_key'), 'Akaunting');
-        $method = $isSMS ? 'smsJson' : 'voiceJson';
-        $json = $client->$method($params);
-
-        flash($json);
+        $this->$type($request->input('sms77_api_key'), $params);
 
         return $this->index();
     }
@@ -89,23 +87,5 @@ class Main extends Controller {
         return $this->response('sms77::index', [
             'settings' => $this->getSettings(),
         ]);
-    }
-
-    private function getSettings(): array {
-        $settings = setting($this->getModuleAlias());
-        return $settings ?: [];
-
-    }
-
-    private function getModuleAlias(): string {
-        return $this->getModule()->alias;
-    }
-
-    private function getModule() {
-        return module('sms77');
-    }
-
-    private function getSettingsRoute(): string {
-        return route('settings.module.edit', ['alias' => $this->getModuleAlias()]);
     }
 }

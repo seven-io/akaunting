@@ -12,7 +12,12 @@ via [sms77](https://www.sms77.io/).
 - Install dependencies: `composer install && npm i && npm run build`
 - Install the module: `php artisan module:install sms77 1`
 
-### Support
+### Functionalities
+- Send bulk SMS to contacts
+- Make bulk text-to-speech calls to contacts
+- Send SMS on invoice creation to associated contact
+
+#### Support
 
 Need help? Feel free to [contact us](https://www.sms77.io/en/company/contact/).
 

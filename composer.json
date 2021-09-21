@@ -11,7 +11,8 @@
         "symfony/http-foundation": "*"
     },
     "require": {
-        "sms77/api": "2.5"
+        "sms77/api": "2.5",
+        "ext-json": "*"
     },
     "scripts": {
         "test": [

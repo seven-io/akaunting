@@ -1,11 +1,12 @@
 {
     "alias": "sms77",
     "icon": "fa fa-mobile",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "active": 1,
     "providers": [
         "Modules\\Sms77\\Providers\\Event",
-        "Modules\\Sms77\\Providers\\Main"
+        "Modules\\Sms77\\Providers\\Main",
+        "Modules\\Sms77\\Providers\\Observer"
     ],
     "aliases": {},
     "files": [],
@@ -21,6 +22,14 @@
             "name": "api_key",
             "rules": "required|string",
             "title": "sms77::general.api_key",
+            "type": "textGroup"
+        },
+        {
+            "attributes": {},
+            "icon": "fa fa-font",
+            "name": "on_invoice_creation_text",
+            "rules": "nullable|string",
+            "title": "sms77::general.on_invoice_creation_text",
             "type": "textGroup"
         }
     ],
