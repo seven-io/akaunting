@@ -14,6 +14,22 @@ class Main extends Provider {
     }
 
     /**
+     * Load routes.
+     * @return void
+     */
+    public function loadRoutes() {
+        if (app()->routesAreCached()) return;
+
+        $routes = [
+            'admin.php',
+            'portal.php',
+        ];
+
+        foreach ($routes as $route)
+            $this->loadRoutesFrom(__DIR__ . '/../Routes/' . $route);
+    }
+
+    /**
      * Boot the application events.
      * @return void
      */
@@ -36,22 +52,6 @@ class Main extends Provider {
      */
     public function loadTranslations() {
         $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'sms77');
-    }
-
-    /**
-     * Load routes.
-     * @return void
-     */
-    public function loadRoutes() {
-        if (app()->routesAreCached()) return;
-
-        $routes = [
-            'admin.php',
-            'portal.php',
-        ];
-
-        foreach ($routes as $route)
-            $this->loadRoutesFrom(__DIR__ . '/../Routes/' . $route);
     }
 
     /**

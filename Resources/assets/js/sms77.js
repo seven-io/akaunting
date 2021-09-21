@@ -11,18 +11,20 @@ Vue.use(DashboardPlugin)
 
 new Vue({
     computed: {
+        isSMS() {
+            return 'sms' === this.msgType
+        },
         msgType() {
             return this.form.sms77_msg_type
         },
         maxTextLength() {
-            return 'sms' === this.msgType ? 1520 : 10000
+            return this.isSMS ? 1520 : 10000
         }
     },
 
     data() {
         return {
             form: new Form('sms77_msg'),
-            maxTextLengthh: 1520,
         }
     },
 

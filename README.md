@@ -2,7 +2,8 @@
 
 # Sms77 Module
 
-This module allows sending SMS and making text-to-speech calls via [sms77](https://www.sms77.io/).
+This module allows sending SMS and making text-to-speech calls
+via [sms77](https://www.sms77.io/).
 
 ## Installation
 

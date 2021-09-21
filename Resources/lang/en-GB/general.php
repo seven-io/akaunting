@@ -3,13 +3,39 @@
 return [
     'api_key' => 'API Key',
     'api_key_missing' => 'An API key is required for sending messages. Please set yours and navigate back.',
+
     'bulk_messaging' => 'Bulk Messaging',
+
     'debug' => 'Debug',
+    'debug_explained' => 'Act like a sandbox not sending messages - useful for testing the API connection',
+    'delay' => 'Delay - pick a date/time for time delayed dispatch',
     'description' => 'This is my awesome module',
+
+    'flash' => 'Flash',
+    'flash_explained' => 'Most devices display those directly in the display and messages do not get saved',
+    'foreign_id' => 'Foreign ID',
+    'foreign_id_explained' => 'Custom value returned in callbacks etc.',
     'from' => 'From',
+    'from_explained' => 'Enter a custom sender',
+
+    'label' => 'Label',
+    'label_explained' => 'Custom identifier for sorting analytics',
+
     'message_type' => 'Message Type',
+
     'name' => 'Sms77',
+    'no_reload' => 'No Reload',
+    'no_reload_explained' => 'Allows sending duplicate messages if enabled - text and recipient alike within 180 seconds',
+
+    'performance_tracking' => 'Performance Tracking',
+    'performance_tracking_explained' => 'Monitor click rate for links found in the message',
+
     'sms' => 'SMS',
+
     'text' => 'Text',
-    'voice' => 'Text-To-Speech',
+
+    'voice' => 'Text-To-Speech Call',
+
+    'xml' => 'XML',
+    'xml_explained' => 'Enable if the text input is in XML format',
 ];

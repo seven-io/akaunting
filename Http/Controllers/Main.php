@@ -25,18 +25,27 @@ class Main extends Controller {
      * @throws Exception
      */
     public function submit(Request $request) {
-        $apiKey = $request->input('sms77_api_key');
-        $from = $request->input('sms77_from');
-        $text = $request->input('sms77_text');
-        $type = $request->input('sms77_msg_type');
-        $isSMS = 'sms' === $type;
+        $isSMS = 'sms' === $request->input('sms77_msg_type');
+
+        $params = ($isSMS ? (new SmsParams)
+            ->setDelay($request->input('sms77_delay'))
+            ->setFlash($request->input('sms77_flash'))
+            ->setForeignId($request->input('sms77_foreign_id'))
+            ->setLabel($request->input('sms77_label'))
+            ->setNoReload($request->input('sms77_no_reload'))
+            ->setPerformanceTracking($request->input('sms77_performance_tracking'))
+            : (new VoiceParams)->setXml($request->input('sms77_xml')))
+            ->setDebug($request->input('sms77_debug'))
+            ->setFrom($request->input('sms77_from'))
+            ->setJson(true)
+            ->setText($request->input('sms77_text'))
+            ->setTo($this->getContactPhones());
+
+        dump($params);
+
+        $client = new Client($request->input('sms77_api_key'), 'Akaunting');
         $method = $isSMS ? 'smsJson' : 'voiceJson';
-        $to = $this->getContactPhones();
-
-        $params = $isSMS ? new SmsParams : new VoiceParams;
-        $params->setFrom($from)->setJson(true)->setText($text)->setTo($to);
-
-        $json = (new Client($apiKey, 'Akaunting'))->$method($params);
+        $json = $client->$method($params);
 
         flash($json);
 

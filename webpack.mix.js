@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+const mix = require('laravel-mix')
 
 /*
  |--------------------------------------------------------------------------
@@ -12,4 +12,4 @@ const mix = require('laravel-mix');
  */
 
 mix.js('Resources/assets/js/sms77.js', 'Resources/assets/js/sms77.min.js')
-;
+

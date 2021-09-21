@@ -7,4 +7,5 @@ use Illuminate\Support\Facades\Route;
  * @see \App\Providers\Route::register
  */
 
-Route::portal('sms77', function () {});
+Route::portal('sms77', function () {
+});
