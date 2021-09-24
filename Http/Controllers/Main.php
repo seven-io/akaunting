@@ -6,15 +6,12 @@ use App\Abstracts\Http\Controller;
 use App\Models\Common\Contact;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Modules\Sms77\Traits\Message;
 use Modules\Sms77\Traits\Settings;
-use Plank\Mediable\MediableCollection;
 use Sms77\Api\Params\SmsParams;
 use Sms77\Api\Params\VoiceParams;
 
@@ -30,7 +27,10 @@ class Main extends Controller {
     public function submit(Request $request) {
         $type = $request->input('sms77_msg_type');
         $isSMS = 'sms' === $type;
-        $phones = $this->getContactPhones();
+        $phones = $this->getContactPhones(
+            (bool)$request->input('sms77_filter_contact_disabled'),
+            $request->input('sms77_filter_contact_type'),
+        );
         $apiKey = $request->input('sms77_api_key');
         $params = [];
         $baseParams = ($isSMS ? (new SmsParams)
@@ -47,8 +47,7 @@ class Main extends Controller {
             ->setText($request->input('sms77_text'));
 
         $pushParams = static function (string $to) use ($baseParams, &$params) {
-            $p = clone $baseParams;
-            $params[] = $p->setTo($to);
+            $params[] = clone $baseParams->setTo($to);
         };
 
         if ($isSMS) $pushParams($phones);
@@ -60,27 +59,19 @@ class Main extends Controller {
     }
 
     /**
-     * @param array|null $contacts
+     * @param bool $disabled
+     * @param string|null $type
      * @return string
      */
-    private function getContactPhones(array $contacts = null): string {
-        $phones = [];
-        foreach ($contacts ?: $this->getContacts() as $contact) {
-            /** @var Contact $contact */
-            $phones[] = $contact->getAttribute('phone');
-        }
-        return implode(',', $phones);
-    }
+    private function getContactPhones(bool $disabled, ?string $type): string {
+        $query = Contact::query()
+            ->select(['phone'])
+            ->whereNotNull(['company_id', 'phone']);
 
-    /**
-     * @param array|string[] $select
-     * @return Contact[]|Builder[]|Collection|\Illuminate\Database\Query\Builder[]|\Illuminate\Support\Collection|MediableCollection
-     */
-    private function getContacts(array $select = ['*']) {
-        return Contact::query()
-            ->select($select)
-            ->whereNotNull(['company_id', 'phone'])
-            ->get();
+        if (!$disabled) $query->where('enabled', '=', 1);
+        if ($type) $query->where('type', '=', $type);
+
+        return implode(',', $query->pluck('phone')->toArray());
     }
 
     /**
@@ -94,6 +85,8 @@ class Main extends Controller {
         }
 
         return $this->response('sms77::index', [
+            'contactTypes' => Contact::query()
+                ->select('type')->distinct()->get()->pluck('type')->toArray(),
             'settings' => $this->getSettings(),
         ]);
     }

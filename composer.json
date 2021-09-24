@@ -1,13 +1,27 @@
 {
+    "authors": [
+        {
+            "email": "a.matthies@sms77.io",
+            "homepage": "https://www.sms77.io",
+            "name": "sms77 e.K.",
+            "role": "Developer"
+        }
+    ],
     "description": "sms77 app for Akaunting",
-    "homepage": "https://www.sms77.io",
+    "homepage": "https://www.github.com/sms77io/akaunting",
+    "keywords": [
+        "akaunting",
+        "gateway",
+        "sms",
+        "text2speech",
+        "tts"
+    ],
     "license": "MIT",
     "name": "sms77/akaunting",
     "replace": {
         "guzzlehttp/guzzle": "*",
         "guzzlehttp/psr7": "*",
         "laravel/framework": "*",
-        "omnipay/common": "*",
         "symfony/http-foundation": "*"
     },
     "require": {
@@ -18,5 +32,12 @@
         "test": [
             "composer install --prefer-dist --no-interaction --no-scripts --no-suggest --no-progress --no-ansi"
         ]
+    },
+    "support": {
+        "docs": "https://github.com/sms77io/akaunting",
+        "email": "support@sms77.io",
+        "issues": "https://github.com/sms77io/akaunting/issues",
+        "rss": "https://www.sms77.io/de/feed/",
+        "source": "https://github.com/sms77io/akaunting"
     }
 }

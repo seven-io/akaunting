@@ -7,13 +7,43 @@
 
     {!! Form::open(['id' => 'sms77_msg', 'novalidate' => true, 'role' => 'form',]) !!}
 
+    <fieldset class='col-md-12'>
+        <legend><h2>{{ trans('sms77::general.contact_filters') }}</h2></legend>
+
+        <div class='form-group col-md-12 margin-top'>
+            <div class='custom-control custom-checkbox'>
+                {{ Form::checkbox('sms77_filter_contact_disabled', 1,
+                    request('sms77_filter_contact_disabled', 0), [
+                       'class' => 'custom-control-input',
+                       'id' => 'sms77_filter_contact_disabled',
+                   ]) }}
+
+                <label class='custom-control-label' for='sms77_filter_contact_disabled'>
+                    <strong>{{ trans('sms77::general.include_disabled_entries') }}</strong>
+                </label>
+            </div>
+        </div>
+
+        <div class='form-group'>
+            <label class='form-control-label' for='sms77_filter_contact_type'>
+                {{ trans('sms77::general.contact_filters_limit_to_type') }}</label>
+
+            <select class='form-control' id='sms77_filter_contact_type' name='sms77_filter_contact_type'>
+                <option value='' selected></option>
+                @foreach ($contactTypes as $contactType)
+                    <option value='{{$contactType}}'>{{$contactType}}</option>
+                @endforeach
+            </select>
+        </div>
+    </fieldset>
+
     {{ Form::textareaGroup('sms77_text', trans('sms77::general.text'), null, null, [
         ':maxlength' => 'maxTextLength',
         'required' => 'required',
         'value' => request('sms77_text'),
     ]) }}
 
-    <div class='form-group' style='padding: 0 12px;'>
+    <div class='col-md-12 form-group'>
         <p>{{trans('sms77::general.message_type')}}</p>
 
         <div class='d-flex justify-content-between'>
@@ -85,6 +115,7 @@
                 'value' => request('sms77_foreign_id'),
             ], request('sms77_foreign_id'))
          }}
+
         <div class='form-group col-md-12 margin-top'>
             <div class='custom-control custom-checkbox'>
                 {{ Form::checkbox('sms77_performance_tracking', 1,

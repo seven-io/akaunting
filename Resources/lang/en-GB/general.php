@@ -6,6 +6,9 @@ return [
 
     'bulk_messaging' => 'Bulk Messaging',
 
+    'contact_filters' => 'Contact Filters',
+    'contact_filters_limit_to_type' => 'Limit to a certain type',
+
     'debug' => 'Debug',
     'debug_explained' => 'Act like a sandbox not sending messages - useful for testing the API connection',
     'delay' => 'Delay - pick a date/time for time delayed dispatch',
@@ -17,6 +20,8 @@ return [
     'foreign_id_explained' => 'Custom value returned in callbacks etc.',
     'from' => 'From',
     'from_explained' => 'Enter a custom sender',
+
+    'include_disabled_entries' => 'Include disabled entries',
 
     'label' => 'Label',
     'label_explained' => 'Custom identifier for sorting analytics',
