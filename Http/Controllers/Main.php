@@ -30,8 +30,10 @@ class Main extends Controller {
     public function submit(Request $request) {
         $type = $request->input('sms77_msg_type');
         $isSMS = 'sms' === $type;
-
-        $params = ($isSMS ? (new SmsParams)
+        $phones = $this->getContactPhones();
+        $apiKey = $request->input('sms77_api_key');
+        $params = [];
+        $baseParams = ($isSMS ? (new SmsParams)
             ->setDelay($request->input('sms77_delay'))
             ->setFlash($request->input('sms77_flash'))
             ->setForeignId($request->input('sms77_foreign_id'))
@@ -42,10 +44,17 @@ class Main extends Controller {
             ->setDebug($request->input('sms77_debug'))
             ->setFrom($request->input('sms77_from'))
             ->setJson(true)
-            ->setText($request->input('sms77_text'))
-            ->setTo($this->getContactPhones());
+            ->setText($request->input('sms77_text'));
 
-        $this->$type($request->input('sms77_api_key'), $params);
+        $pushParams = static function (string $to) use ($baseParams, &$params) {
+            $p = clone $baseParams;
+            $params[] = $p->setTo($to);
+        };
+
+        if ($isSMS) $pushParams($phones);
+        else foreach (explode(',', $phones) as $phone) $pushParams($phone);
+
+        foreach ($params as $param) $this->$type($apiKey, $param);
 
         return $this->index();
     }
