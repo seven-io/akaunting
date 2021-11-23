@@ -28,7 +28,7 @@ return [
 
     'message_type' => 'Message Type',
 
-    'name' => 'Sms77',
+    'name' => 'sms77',
     'no_reload' => 'No Reload',
     'no_reload_explained' => 'Allows sending duplicate messages if enabled - text and recipient alike within 180 seconds',
 

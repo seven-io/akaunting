@@ -1,6 +1,6 @@
-![Sms77.io Logo](https://www.sms77.io/wp-content/uploads/2019/07/sms77-Logo-400x79.png "Sms77.io Logo")
+![sms77 Logo](https://www.sms77.io/wp-content/uploads/2019/07/sms77-Logo-400x79.png "sms77 Logo")
 
-# Sms77 Module
+# sms77 Module
 
 This module allows sending SMS and making text-to-speech calls
 via [sms77](https://www.sms77.io/).
