@@ -1,28 +1,25 @@
 <?php
 
-namespace Modules\Sms77\Listeners;
+namespace Modules\Seven\Listeners;
 
 use App\Events\Module\Installed as Event;
 use App\Traits\Permissions;
-use Modules\Sms77\Database\Seeds\Sms77DatabaseSeeder;
 
 class FinishInstallation {
     use Permissions;
 
-    public $alias = 'sms77';
+    public string $alias = 'seven';
 
     /**
      * Handle the event.
-     * @param Event $event
-     * @return void
      */
-    public function handle(Event $event) {
+    public function handle(Event $event): void {
         if ($event->alias !== $this->alias) return;
 
         $this->updatePermissions();
     }
 
-    protected function updatePermissions() {
+    protected function updatePermissions(): void {
         // c=create, r=read, u=update, d=delete
         $this->attachPermissionsToAdminRoles([
             $this->alias . '-main' => 'c,r,u,d',

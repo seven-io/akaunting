@@ -11,5 +11,7 @@ const mix = require('laravel-mix')
  |
  */
 
-mix.js('Resources/assets/js/sms77.js', 'Resources/assets/js/sms77.min.js')
+mix
+    .js('Resources/assets/js/seven.js', 'Resources/assets/js/seven.min.js')
+    .vue()
 

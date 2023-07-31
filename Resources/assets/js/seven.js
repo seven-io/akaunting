@@ -4,8 +4,7 @@ import Vue from 'vue'
 
 import Global from './../../../../../resources/assets/js/mixins/global'
 import Form from './../../../../../resources/assets/js/plugins/form'
-import DashboardPlugin
-    from './../../../../../resources/assets/js/plugins/dashboard-plugin'
+import DashboardPlugin from './../../../../../resources/assets/js/plugins/dashboard-plugin'
 
 Vue.use(DashboardPlugin)
 
@@ -15,7 +14,7 @@ new Vue({
             return 'sms' === this.msgType
         },
         msgType() {
-            return this.form.sms77_msg_type
+            return this.form.seven_msg_type
         },
         maxTextLength() {
             return this.isSMS ? 1520 : 10000
@@ -24,7 +23,7 @@ new Vue({
 
     data() {
         return {
-            form: new Form('sms77_msg'),
+            form: new Form('seven_msg'),
         }
     },
 

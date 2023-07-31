@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 /**
- * 'portal' middleware and 'portal/sms77' prefix applied to all routes (including names)
+ * 'portal' middleware and 'portal/seven' prefix applied to all routes (including names)
  * @see \App\Providers\Route::register
  */
 
-Route::portal('sms77', function () {
+Route::portal('seven', function () {
 });

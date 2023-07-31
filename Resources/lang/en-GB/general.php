@@ -12,7 +12,7 @@ return [
     'debug' => 'Debug',
     'debug_explained' => 'Act like a sandbox not sending messages - useful for testing the API connection',
     'delay' => 'Delay - pick a date/time for time delayed dispatch',
-    'description' => 'Send SMS and make text-to-speech calls via sms77.io',
+    'description' => 'Send SMS and make text-to-speech calls via seven.io',
 
     'flash' => 'Flash',
     'flash_explained' => 'Most devices display those directly in the display and messages do not get saved',
@@ -28,7 +28,7 @@ return [
 
     'message_type' => 'Message Type',
 
-    'name' => 'sms77',
+    'name' => 'seven',
     'no_reload' => 'No Reload',
     'no_reload_explained' => 'Allows sending duplicate messages if enabled - text and recipient alike within 180 seconds',
 

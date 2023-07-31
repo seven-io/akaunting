@@ -1,14 +1,14 @@
 {
     "authors": [
         {
-            "email": "a.matthies@sms77.io",
-            "homepage": "https://www.sms77.io",
-            "name": "sms77 e.K.",
+            "email": "support@seven.io",
+            "homepage": "https://www.seven.io",
+            "name": "seven communications GmbH & Co. KG",
             "role": "Developer"
         }
     ],
-    "description": "sms77 app for Akaunting",
-    "homepage": "https://www.github.com/sms77io/akaunting",
+    "description": "seven app for Akaunting",
+    "homepage": "https://www.github.com/seven-io/akaunting",
     "keywords": [
         "akaunting",
         "gateway",
@@ -17,7 +17,7 @@
         "tts"
     ],
     "license": "MIT",
-    "name": "sms77/akaunting",
+    "name": "seven.io/akaunting",
     "replace": {
         "guzzlehttp/guzzle": "*",
         "guzzlehttp/psr7": "*",
@@ -25,7 +25,7 @@
         "symfony/http-foundation": "*"
     },
     "require": {
-        "sms77/api": "2.5",
+        "sms77/api": "v2.6.0",
         "ext-json": "*"
     },
     "scripts": {
@@ -34,10 +34,10 @@
         ]
     },
     "support": {
-        "docs": "https://github.com/sms77io/akaunting",
-        "email": "support@sms77.io",
-        "issues": "https://github.com/sms77io/akaunting/issues",
-        "rss": "https://www.sms77.io/de/feed/",
-        "source": "https://github.com/sms77io/akaunting"
+        "docs": "https://github.com/seven-io/akaunting",
+        "email": "support@seven.io",
+        "issues": "https://github.com/seven-io/akaunting/issues",
+        "rss": "https://www.seven.io/en/feed/",
+        "source": "https://github.com/seven-io/akaunting"
     }
 }

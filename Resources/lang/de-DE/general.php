@@ -12,7 +12,7 @@ return [
     'debug' => 'Debug',
     'debug_explained' => 'Validiert die Anfrage auf API-Ebene, aber versendet keine Nachrichten',
     'delay' => 'Versandzeitpunkt - wählen von Datum/Zeit für zeitversetzen Versand',
-    'description' => 'SMS-Versand und Text-zu-Sprachanrufe tätigen via sms77',
+    'description' => 'SMS-Versand und Text-zu-Sprachanrufe tätigen via seven',
 
     'flash' => 'Flash',
     'flash_explained' => 'Viele Geräte zeigen diese SMS direkt im Display an und werden nicht gespeichert',
@@ -28,7 +28,7 @@ return [
 
     'message_type' => 'Nachrichtentyp',
 
-    'name' => 'sms77',
+    'name' => 'seven',
     'no_reload' => 'Duplikate erlauben',
     'no_reload_explained' => 'Erlaubt den Versand von Duplikaten - Text und Rufnummer identisch innerhalb 180 Sekunden',
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Sms77\Providers;
+namespace Modules\Seven\Providers;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as Provider;
 

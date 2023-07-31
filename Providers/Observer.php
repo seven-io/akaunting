@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Sms77\Providers;
+namespace Modules\Seven\Providers;
 
 use App\Models\Document\Document;
 use Illuminate\Support\ServiceProvider as Provider;
@@ -11,6 +11,6 @@ class Observer extends Provider {
      * @return void
      */
     public function boot() {
-        Document::observe(\Modules\Sms77\Observers\Document::class);
+        Document::observe(\Modules\Seven\Observers\Document::class);
     }
 }

@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a90e362e48bc9274605c983aacd94618",
+    "content-hash": "afb9bf39bbe76caf60e10148b59a87cd",
     "packages": [
         {
             "name": "sms77/api",
-            "version": "v2.4.0",
+            "version": "v2.6.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sms77io/php-client.git",
-                "reference": "121ef7429b370cc648a3733adbc9a54236c873f1"
+                "url": "https://github.com/seven-io/php-client.git",
+                "reference": "9d56308fbf959ca83ce3f2e1de7d7d45271d940e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sms77io/php-client/zipball/121ef7429b370cc648a3733adbc9a54236c873f1",
-                "reference": "121ef7429b370cc648a3733adbc9a54236c873f1",
+                "url": "https://api.github.com/repos/seven-io/php-client/zipball/9d56308fbf959ca83ce3f2e1de7d7d45271d940e",
+                "reference": "9d56308fbf959ca83ce3f2e1de7d7d45271d940e",
                 "shasum": ""
             },
             "require": {
@@ -44,14 +44,14 @@
             ],
             "authors": [
                 {
-                    "name": "sms77 e.K.",
-                    "email": "a.matthies@sms77.io",
-                    "homepage": "https://www.sms77.io",
+                    "name": "seven communications GmbH & Co. KG",
+                    "email": "support@seven.io",
+                    "homepage": "https://www.seven.io",
                     "role": "Developer"
                 }
             ],
-            "description": "Official API Client for requesting the Sms77.io SMS Gateway.",
-            "homepage": "https://github.com/sms77io/php-client",
+            "description": "Official API Client for requesting the seven.io SMS Gateway.",
+            "homepage": "https://github.com/seven-io/php-client",
             "keywords": [
                 "2fa",
                 "cnam",
@@ -63,13 +63,13 @@
                 "tts"
             ],
             "support": {
-                "docs": "https://github.com/sms77io/php-client",
-                "email": "support@sms77.io",
-                "issues": "https://github.com/sms77io/php-client/issues",
-                "rss": "https://www.sms77.io/de/feed/",
-                "source": "https://github.com/sms77io/php-client"
+                "docs": "https://github.com/seven-io/php-client",
+                "email": "support@seven.io",
+                "issues": "https://github.com/seven-io/php-client/issues",
+                "rss": "https://www.seven.io/en/feed/",
+                "source": "https://github.com/seven-io/php-client"
             },
-            "time": "2021-05-10T08:01:36+00:00"
+            "time": "2023-05-26T12:27:14+00:00"
         }
     ],
     "packages-dev": [],
@@ -78,7 +78,9 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-json": "*"
+    },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.3.0"
 }

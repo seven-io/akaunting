@@ -1,11 +1,11 @@
 <?php
 
-namespace Modules\Sms77\Observers;
+namespace Modules\Seven\Observers;
 
 use App\Abstracts\Observer;
 use App\Models\Document\Document as Model;
-use Modules\Sms77\Traits\Message;
-use Modules\Sms77\Traits\Settings;
+use Modules\Seven\Traits\Message;
+use Modules\Seven\Traits\Settings;
 use Sms77\Api\Exception\InvalidBooleanOptionException;
 use Sms77\Api\Exception\InvalidOptionalArgumentException;
 use Sms77\Api\Exception\InvalidRequiredArgumentException;
@@ -16,8 +16,6 @@ class Document extends Observer {
 
     /**
      * Listen to the created event.
-     * @param Model $document
-     * @return void
      * @throws InvalidBooleanOptionException
      * @throws InvalidOptionalArgumentException
      * @throws InvalidRequiredArgumentException

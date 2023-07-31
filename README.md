@@ -1,16 +1,16 @@
-![sms77 Logo](https://www.sms77.io/wp-content/uploads/2019/07/sms77-Logo-400x79.png "sms77 Logo")
+![](https://www.seven.io/wp-content/uploads/Logo.svg "seven Logo")
 
-# sms77 Module
+# seven Module
 
 This module allows sending SMS and making text-to-speech calls
-via [sms77](https://www.sms77.io/).
+via [seven](https://www.seven.io/).
 
 ## Installation
 
-- Create a `Sms77` folder in the `modules` directory and navigate into it
-- Clone the repository: `git clone https://github.com/sms77io/akaunting.git`
+- Create a `Seven` folder in the `modules` directory and navigate into it
+- Clone the repository: `git clone https://github.com/seven-io/akaunting.git`
 - Install dependencies: `composer install && npm i && npm run build`
-- Install the module: `php artisan module:install sms77 1`
+- Install the module: `php artisan module:install seven 1`
 
 ### Functionalities
 - Send bulk SMS to contacts
@@ -19,6 +19,6 @@ via [sms77](https://www.sms77.io/).
 
 #### Support
 
-Need help? Feel free to [contact us](https://www.sms77.io/en/company/contact/).
+Need help? Feel free to [contact us](https://www.seven.io/en/company/contact/).
 
 [![MIT](https://img.shields.io/badge/License-MIT-teal.svg)](LICENSE)

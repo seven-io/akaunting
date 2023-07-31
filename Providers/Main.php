@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Sms77\Providers;
+namespace Modules\Seven\Providers;
 
 use Illuminate\Support\ServiceProvider as Provider;
 
@@ -43,7 +43,7 @@ class Main extends Provider {
      * @return void
      */
     public function loadViews() {
-        $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'sms77');
+        $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'seven');
     }
 
     /**
@@ -51,7 +51,7 @@ class Main extends Provider {
      * @return void
      */
     public function loadTranslations() {
-        $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'sms77');
+        $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'seven');
     }
 
     /**

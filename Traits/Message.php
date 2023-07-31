@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Sms77\Traits;
+namespace Modules\Seven\Traits;
 
 use Exception;
 use Sms77\Api\Client;
@@ -12,8 +12,6 @@ use Sms77\Api\Params\VoiceParams;
 
 trait Message {
     /**
-     * @param string $apiKey
-     * @return Client
      * @throws Exception
      */
     private function initClient(string $apiKey): Client {
@@ -21,9 +19,6 @@ trait Message {
     }
 
     /**
-     * @param Client $client
-     * @param SmsParams $params
-     * @return void
      * @throws InvalidBooleanOptionException
      * @throws InvalidOptionalArgumentException
      * @throws InvalidRequiredArgumentException
@@ -33,9 +28,6 @@ trait Message {
     }
 
     /**
-     * @param string $apiKey
-     * @param VoiceParams $params
-     * @return void
      * @throws InvalidBooleanOptionException
      * @throws InvalidRequiredArgumentException
      */
@@ -43,7 +35,7 @@ trait Message {
         $this->flashPretty($this->initClient($apiKey)->voiceJson($params));
     }
 
-    private function flashPretty($json) {
+    private function flashPretty(mixed $json): void {
         flash(json_encode($json, JSON_PRETTY_PRINT));
     }
 }
