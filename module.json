@@ -1,6 +1,6 @@
 {
     "alias": "seven",
-    "icon": "fa fa-mobile",
+    "icon": "sms",
     "version": "1.4.0",
     "active": 1,
     "providers": [
@@ -22,7 +22,7 @@
             "name": "api_key",
             "rules": "required|string",
             "title": "seven::general.api_key",
-            "type": "textGroup"
+            "type": "password"
         },
         {
             "attributes": {},
@@ -30,7 +30,7 @@
             "name": "on_invoice_creation_text",
             "rules": "nullable|string",
             "title": "seven::general.on_invoice_creation_text",
-            "type": "textGroup"
+            "type": "textarea"
         }
     ],
     "extra-modules": {}
