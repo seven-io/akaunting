@@ -4,13 +4,17 @@ namespace Modules\Seven\Listeners;
 
 use App\Events\Menu\AdminCreated;
 
+/** @noinspection PhpUnused */
 class AddToAdminMenu {
     /**
      * Handle the event.
      */
     public function handle(AdminCreated $event): void {
-        $item = $event->menu->whereTitle(trans_choice('general.sales', 2));
-        $item->route('seven.index',
-            trans('seven::general.bulk_messaging') . ' - seven', [], 4, ['icon' => '']);
+        $event->menu->add([
+            'icon' => 'sms',
+            'order' => 100,
+            'route' => ['seven.index', []],
+            'title' => trans('seven::general.bulk_messaging'),
+        ]);
     }
 }

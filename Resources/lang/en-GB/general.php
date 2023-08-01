@@ -5,8 +5,10 @@ return [
     'api_key_missing' => 'An API key is required for sending messages. Please set yours and navigate back.',
 
     'bulk_messaging' => 'Bulk Messaging',
+    'bulk_messaging_description' => 'This form allows you to message all contacts saved in the database.',
 
     'contact_filters' => 'Contact Filters',
+    'contact_filters_description' => 'Use these filters to narrow down the contacts to message.',
     'contact_filters_limit_to_type' => 'Limit to a certain type',
 
     'debug' => 'Debug',
@@ -40,6 +42,7 @@ return [
     'sms' => 'SMS',
 
     'text' => 'Text',
+    'text_missing' => 'You can not send an empty message.',
 
     'voice' => 'Text-To-Speech Call',
 

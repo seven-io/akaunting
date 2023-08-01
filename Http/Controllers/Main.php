@@ -5,11 +5,7 @@ namespace Modules\Seven\Http\Controllers;
 use App\Abstracts\Http\Controller;
 use App\Models\Common\Contact;
 use Exception;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Routing\Redirector;
 use Modules\Seven\Traits\Message;
 use Modules\Seven\Traits\Settings;
 use Sms77\Api\Params\SmsParams;
@@ -22,7 +18,13 @@ class Main extends Controller {
      * Submit bulk messaging.
      * @throws Exception
      */
-    public function submit(Request $request): Response|Redirector|RedirectResponse|Application {
+    public function submit(Request $request): mixed {
+        $text = $request->input('seven_text');
+        if (!$text) {
+            flash(trans('seven::general.text_missing'))->error();
+            return $this->index();
+        }
+
         $type = $request->input('seven_msg_type');
         $isSMS = 'sms' === $type;
         $phones = $this->getContactPhones(
@@ -31,18 +33,21 @@ class Main extends Controller {
         );
         $apiKey = $request->input('seven_api_key');
         $params = [];
-        $baseParams = ($isSMS ? (new SmsParams)
-            ->setDelay($request->input('seven_delay'))
-            ->setFlash($request->input('seven_flash'))
-            ->setForeignId($request->input('seven_foreign_id'))
-            ->setLabel($request->input('seven_label'))
-            ->setNoReload($request->input('seven_no_reload'))
-            ->setPerformanceTracking($request->input('seven_performance_tracking'))
-            : (new VoiceParams)->setXml($request->input('seven_xml')))
+        $baseParams = $isSMS
+            ? (new SmsParams)
+                ->setDelay($request->input('seven_delay'))
+                ->setFlash($request->input('seven_flash'))
+                ->setForeignId($request->input('seven_foreign_id'))
+                ->setLabel($request->input('seven_label'))
+                ->setNoReload($request->input('seven_no_reload'))
+                ->setPerformanceTracking($request->input('seven_performance_tracking'))
+            : (new VoiceParams)
+                ->setXml($request->input('seven_xml'));
+        $baseParams
             ->setDebug($request->input('seven_debug'))
             ->setFrom($request->input('seven_from'))
             ->setJson(true)
-            ->setText($request->input('seven_text'));
+            ->setText($text);
 
         $pushParams = static function (string $to) use ($baseParams, &$params) {
             $params[] = clone $baseParams->setTo($to);
@@ -70,9 +75,9 @@ class Main extends Controller {
     /**
      * Display bulk messaging.
      */
-    public function index(): Response|Redirector|Application|RedirectResponse {
+    public function index(): mixed {
         if (empty($this->getSettings())) {
-            flash(trans('seven::general.api_key_missing'));
+            flash(trans('seven::general.api_key_missing'))->error();
             return redirect($this->getSettingsRoute());
         }
 

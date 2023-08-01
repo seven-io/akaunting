@@ -5,8 +5,10 @@ return [
     'api_key_missing' => 'Ein API-Schlüssel ist erforderlich zum Nachrichtenversand. Bitte setzen und dann wieder hierher navigieren.',
 
     'bulk_messaging' => 'Massenversand',
+    'bulk_messaging_description' => 'Dieses Formular ermöglicht den Nachrichtenversand an alle in der Datenbank gespeicherten Kontakte.',
 
     'contact_filters' => 'Kontakt-Filter',
+    'contact_filters_description' => 'Mit diesen Filtern kann können die kontaktierten Kontakte eingegrenzt werden.',
     'contact_filters_limit_to_type' => 'Limitieren auf bestimmten Typ',
 
     'debug' => 'Debug',
@@ -40,6 +42,7 @@ return [
     'sms' => 'SMS',
 
     'text' => 'Text',
+    'text_missing' => 'Der Nachrichteninhalt darf nicht leer sein.',
 
     'voice' => 'Text-zu-Sprachanruf',
 
