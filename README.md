@@ -1,4 +1,4 @@
-<img src="https://www.seven.io/wp-content/uploads/Logo.svg" width="250" />
+<img alt="" src="https://www.seven.io/wp-content/uploads/Logo.svg" width="250" />
 
 # seven Module
 
@@ -7,10 +7,10 @@ via [seven](https://www.seven.io/).
 
 ## Installation
 
-- Create a `Seven` folder in the `modules` directory and navigate into it
-- Clone the repository: `git clone https://github.com/seven-io/akaunting.git`
-- Install dependencies: `composer install && npm i && npm run build`
-- Install the module: `php artisan module:install seven 1`
+- Open up a terminal and change directory to the `modules` directory inside of your akaunting installation
+- Clone the repository: `git clone https://github.com/seven-io/akaunting.git Seven`
+- Install dependencies: `cd Seven && composer install && npm i && npm run build`
+- Install the module: `cd ../../ && php artisan module:install seven <company_id>`
 
 ### Functionalities
 - Send bulk SMS to contacts

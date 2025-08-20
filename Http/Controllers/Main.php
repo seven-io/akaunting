@@ -32,6 +32,7 @@ class Main extends Controller {
             $request->input('seven_filter_contact_type'),
         );
         $apiKey = $request->input('seven_api_key');
+
         $params = [];
         $baseParams = $isSMS
             ? (new SmsParams)
