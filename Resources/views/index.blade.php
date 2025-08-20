@@ -109,14 +109,6 @@
                     />
 
                     <x-form.group.checkbox
-                        checked="{{(bool)request('seven_no_reload')}}"
-                        name="seven_no_reload"
-                        label="{{ trans('seven::general.no_reload') }}"
-                        :options="['1' => trans('seven::general.no_reload_explained')]"
-                        not-required
-                    />
-
-                    <x-form.group.checkbox
                         checked="{{(bool)request('seven_flash')}}"
                         name="seven_flash"
                         label="{{ trans('seven::general.flash') }}"

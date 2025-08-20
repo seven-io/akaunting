@@ -29,8 +29,6 @@ return [
     'message_type' => 'Nachrichtentyp',
 
     'name' => 'seven',
-    'no_reload' => 'Duplikate erlauben',
-    'no_reload_explained' => 'Erlaubt den Versand von Duplikaten - Text und Rufnummer identisch innerhalb 180 Sekunden',
 
     'on_invoice_creation_text' => 'SMS-Text für Versand bei Rechnungserstellung - leer lassen zum deaktivieren',
 

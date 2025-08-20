@@ -39,7 +39,6 @@ class Main extends Controller {
                 ->setFlash($request->input('seven_flash'))
                 ->setForeignId($request->input('seven_foreign_id'))
                 ->setLabel($request->input('seven_label'))
-                ->setNoReload($request->input('seven_no_reload'))
                 ->setPerformanceTracking($request->input('seven_performance_tracking'))
             : new VoiceParams;
         $baseParams
