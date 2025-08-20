@@ -11,8 +11,6 @@ return [
     'contact_filters_description' => 'Mit diesen Filtern kann können die kontaktierten Kontakte eingegrenzt werden.',
     'contact_filters_limit_to_type' => 'Limitieren auf bestimmten Typ',
 
-    'debug' => 'Debug',
-    'debug_explained' => 'Validiert die Anfrage auf API-Ebene, aber versendet keine Nachrichten',
     'delay' => 'Versandzeitpunkt - wählen von Datum/Zeit für zeitversetzen Versand',
     'description' => 'SMS-Versand und Text-zu-Sprachanrufe tätigen via seven',
 

@@ -11,8 +11,6 @@ return [
     'contact_filters_description' => 'Use these filters to narrow down the contacts to message.',
     'contact_filters_limit_to_type' => 'Limit to a certain type',
 
-    'debug' => 'Debug',
-    'debug_explained' => 'Act like a sandbox not sending messages - useful for testing the API connection',
     'delay' => 'Delay - pick a date/time for time delayed dispatch',
     'description' => 'Send SMS and make text-to-speech calls via seven.io',
 

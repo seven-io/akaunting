@@ -126,14 +126,6 @@
                 </template>
                 <div v-else class='form-group col-md-12 margin-top'></div>
 
-                <x-form.group.checkbox
-                    checked="{{(bool)request('seven_debug')}}"
-                    name="seven_debug"
-                    label="{{ trans('seven::general.debug') }}"
-                    :options="['1' => trans('seven::general.debug_explained')]"
-                    not-required
-                />
-
                 <x-form.section>
                     <x-slot name="foot">
                         <x-button

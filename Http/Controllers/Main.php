@@ -43,7 +43,6 @@ class Main extends Controller {
                 ->setPerformanceTracking($request->input('seven_performance_tracking'))
             : new VoiceParams;
         $baseParams
-            ->setDebug($request->input('seven_debug'))
             ->setFrom($request->input('seven_from'))
             ->setJson(true)
             ->setText($text);
