@@ -41,8 +41,7 @@ class Main extends Controller {
                 ->setLabel($request->input('seven_label'))
                 ->setNoReload($request->input('seven_no_reload'))
                 ->setPerformanceTracking($request->input('seven_performance_tracking'))
-            : (new VoiceParams)
-                ->setXml($request->input('seven_xml'));
+            : new VoiceParams;
         $baseParams
             ->setDebug($request->input('seven_debug'))
             ->setFrom($request->input('seven_from'))

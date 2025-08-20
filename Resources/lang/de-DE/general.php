@@ -45,7 +45,4 @@ return [
     'text_missing' => 'Der Nachrichteninhalt darf nicht leer sein.',
 
     'voice' => 'Text-zu-Sprachanruf',
-
-    'xml' => 'XML',
-    'xml_explained' => 'Aktivieren wenn der Text im XML-Format vorliegt',
 ];

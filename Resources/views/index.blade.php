@@ -124,15 +124,7 @@
                         not-required
                     />
                 </template>
-                <div v-else class='form-group col-md-12 margin-top'>
-                    <x-form.group.checkbox
-                        checked="{{(bool)request('seven_xml')}}"
-                        name="seven_xml"
-                        label="{{ trans('seven::general.xml') }}"
-                        :options="['1' => trans('seven::general.xml_explained')]"
-                        not-required
-                    />
-                </div>
+                <div v-else class='form-group col-md-12 margin-top'></div>
 
                 <x-form.group.checkbox
                     checked="{{(bool)request('seven_debug')}}"

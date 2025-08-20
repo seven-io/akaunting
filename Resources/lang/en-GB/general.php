@@ -45,7 +45,4 @@ return [
     'text_missing' => 'You can not send an empty message.',
 
     'voice' => 'Text-To-Speech Call',
-
-    'xml' => 'XML',
-    'xml_explained' => 'Enable if the text input is in XML format',
 ];
