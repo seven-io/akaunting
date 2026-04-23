@@ -25,7 +25,7 @@
         "symfony/http-foundation": "*"
     },
     "require": {
-        "sms77/api": "v2.6.0",
+        "sms77/api": "v8.1.1",
         "ext-json": "*"
     },
     "scripts": {
